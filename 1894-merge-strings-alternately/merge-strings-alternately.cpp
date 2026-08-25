@@ -1,4 +1,5 @@
-class Solution {
+
+        class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
         string ans;
@@ -11,13 +12,14 @@ public:
         }
         if(word1.length()>word2.length()){
            string t= word1.substr(i);
-        ans=ans+t;
+        ans.append(t);
         return ans;
     }
     else{
         string p= word2.substr(j);
-        ans+=p;
+        ans.append(p);
         return ans;
     }
     }
 };
+        
