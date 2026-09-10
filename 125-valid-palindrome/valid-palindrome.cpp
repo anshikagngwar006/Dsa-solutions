@@ -15,15 +15,14 @@ public:
         }
     int i=0;
     int j=ans.length()-1;
-    bool found=true;
     while(i<=j){
         if(ans[i]!=ans[j]){
-            found=false;
+            return false;
         }
         i++;
         j--;
     }
 
-return found;
+return true;
     }
 };
