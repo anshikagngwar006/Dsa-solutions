@@ -27,7 +27,7 @@ public:
                 if(count>1){
                     ans=ans+to_string(count);
                 }
-        for(int i=1;i< ans.length();i++){
+        for(int i=0;i< ans.length();i++){
         chars[i]=ans[i];
         index=i;
         }
