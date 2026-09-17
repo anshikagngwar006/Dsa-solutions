@@ -1,20 +1,22 @@
 class Solution {
 public:
     bool rotateString(string s, string goal) {
-        if (s==goal){
-            return true;
-        }
-        else{
-            for(int i=0;i<s.length();i++){
-                rotate(s.begin(),s.begin()+1,s.end());
- if (s==goal){
-            return true;
-                }
-                    
+        if(s.length() != goal.length()) {
+        return false;
+    }
 
+        string ans=s + s;
+        string final;
+        int left=0;
+        for(int right=0;right<ans.length();right++){
+            final.push_back(ans[right]);
+            if(final.length()>goal.length()){
+                final.erase(final.begin());
             }
+            if(final==goal){
+            return true;
         }
-        
+        }
         return false;
     }
 };
