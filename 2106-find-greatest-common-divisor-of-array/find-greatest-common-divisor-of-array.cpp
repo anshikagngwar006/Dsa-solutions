@@ -1,16 +1,15 @@
 class Solution {
 public:
-      int ans(int divisor,int samllest, int greatest){
-        if(samllest%divisor==0&&greatest%divisor==0){
-            return divisor;
-        }
-        return ans(divisor-1,samllest,greatest);
-      }
+int getgcd(int S,int G){
+    if(G==0){
+        return S;
+    }
+    return getgcd(G,S%G);
+}
     int findGCD(vector<int>& nums) {
         sort(nums.begin(),nums.end());
-       int samllest= nums[0];
-       int greatest=nums[nums.size()-1];
-       int divisor=nums[0];
-        return ans(divisor,samllest,greatest);
+        int S=nums[0];
+        int G=nums[nums.size()-1];
+        return getgcd(S,G);
     }
 };
